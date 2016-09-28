@@ -1,0 +1,22 @@
+[
+    {
+        "name": "ADMIN",
+        "password": "",
+        "admin": true,
+        "active": true
+    },
+    {
+        "name": "User1",
+        "password": "dkdkkdk333+",
+        "admin": false,
+        "active": true,
+        "rule": true
+    },
+    {
+        "name": "User2",
+        "password": "UKu2222!",
+        "admin": false,
+        "active": true,
+        "rule": true
+    }
+]
