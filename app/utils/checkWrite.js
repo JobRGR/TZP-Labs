@@ -1,6 +1,7 @@
 import fs from 'fs'
 
 export default () => {
+  return true
   const fileName = process.cwd() + '/app/data/index.json'
   fs.exists(fileName, exists => {
     if (!exists){
