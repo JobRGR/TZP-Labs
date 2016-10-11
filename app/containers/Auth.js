@@ -68,14 +68,14 @@ class Auth extends Component {
     }
     else {
       addUser(data.name, data.password)
-      this.props.dispatch(setUser({
-        name: data.name,
-        password: data.password,
-        admin: false,
-        action: true
-      }))
-
-      this.props.dispatch(setDefaultUsers())
+      setTimeout(() => {
+        this.props.dispatch(setUser({
+          name: data.name,
+          password: data.password,
+          admin: false,
+          action: true
+        }))
+      }, 0)
     }
   }
 

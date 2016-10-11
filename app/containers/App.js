@@ -6,6 +6,7 @@ import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import FlatButton from 'material-ui/FlatButton'
+import quite from '../utils/removePublic'
 
 class App extends Component {
 
@@ -46,6 +47,7 @@ class App extends Component {
           <MenuItem onTouchTap={() => this.navigate('/')}>Home</MenuItem>
           <MenuItem onTouchTap={() => this.navigate('/about')}>About</MenuItem>
           <MenuItem onTouchTap={() => this.navigate('/info')}>Info</MenuItem>
+          <MenuItem onTouchTap={ () => quite() }>Quite</MenuItem>
         </Drawer>
 
 

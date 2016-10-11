@@ -12,22 +12,21 @@ import { setUser } from './actions/user'
 import { setDefaultUsers } from './actions/users'
 import checkWrite from './utils/checkWrite'
 
-
 const store = configureStore()
 const history = syncHistoryWithStore(hashHistory, store)
 const muiTheme = getMuiTheme()
 
 injectTapEventPlugin()
-checkWrite()
+checkWrite(() => {
+  store.dispatch(setUser(localStorage.user != 'undefined' ? JSON.parse(localStorage.user || null) : null))
+  store.dispatch(setDefaultUsers())
 
-store.dispatch(setUser(localStorage.user != 'undefined' ? JSON.parse(localStorage.user || null) : null))
-store.dispatch(setDefaultUsers())
-
-render(
-  <MuiThemeProvider muiTheme = {muiTheme}>
-    <Provider store={store}>
-      <Router history={history} routes={routes} />
-    </Provider>
-  </MuiThemeProvider> ,
-  document.getElementById('root')
-)
+  render(
+    <MuiThemeProvider muiTheme = {muiTheme}>
+      <Provider store={store}>
+        <Router history={history} routes={routes} />
+      </Provider>
+    </MuiThemeProvider> ,
+    document.getElementById('root')
+  )
+})

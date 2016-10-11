@@ -2,9 +2,11 @@ import write from './write'
 import read from './read'
 
 export default (name, password) => {
-  return
+  if (process.env.NODE_ENV == 'production') {
+    return
+  }
   const json = read()
- json.push({
+  json.push({
     name, password,
     admin: false,
     active: true,
